@@ -1,5 +1,5 @@
 
-const Employee = require("../classes")
+const Employee = require("../Employee")
 
 test("testing if its an object", () => {
     const employee = new Employee()
