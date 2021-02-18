@@ -7,22 +7,22 @@ class Employee {
 
     //use method to get the name of employee and return value to use in html
     getName() {
-
+        return this.name
     }
 
     //use method to get the id of employee and return value to use in html
     getId() {
-
+        return this.id
     }
 
     //use method to get the email of employee and return value to use in html
     getEmail() {
-
+        return this.email
     }
 
     //will return the value of Employee
     getRole() {
-
+        return `Employee`
     }
 
 }
@@ -79,6 +79,8 @@ class Intern extends Employee {
 
     //method to overide employee with intern
     getRole() {
-        
+
     }
 }
+
+module.exports = Employee;
