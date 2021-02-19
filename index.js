@@ -159,3 +159,5 @@ function init() {
 }
 
 init()
+
+module.exports = roster;
