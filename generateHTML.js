@@ -1,0 +1,1 @@
+//create a function that takes the users input from prompts and generates the HTML
