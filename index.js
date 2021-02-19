@@ -4,6 +4,8 @@ const Employee = require('./Employee')
 const Manager = require('./Manager')
 const Engineer = require('./Engineer')
 const Intern = require('./Intern')
+const generateHTML = require("./generateHTML")
+
 
 const roster = []
 
@@ -17,9 +19,8 @@ const choices = (input) => {
     if(input === "Intern") {
         inquirer.prompt([...promptIntern]).then((response) => {
             roster.push(response)
-            console.log(roster);
             if(response.continue === "I'm All Done") {
-                console.log(response);
+                writeToFile(roster);
             } else {
                 choices(response.continue)
             }
@@ -27,9 +28,8 @@ const choices = (input) => {
     } else if (input === "Engineer") {
         inquirer.prompt([...promptEngineer]).then((response) => {
             roster.push(response)
-            console.log(roster);
             if(response.continue === "I'm All Done") {
-                console.log(response);
+                writeToFile(roster);
             } else {
                 choices(response.continue)
             }
@@ -60,7 +60,7 @@ const promptManager = [
     {
         type: "number",
         message: "What is the Manager's office number?",
-        name: "officeNumber",
+        name: "random",
         validate: confirmNumber
     },
 
@@ -93,9 +93,9 @@ const promptIntern = [
     },
 
     {
-        type: "number",
+        type: "input",
         message: "What is the Intern's School?",
-        name: "school",
+        name: "random",
     },
 
     {
@@ -128,7 +128,7 @@ const promptEngineer = [
     {
         type: "number",
         message: "What is the Engineer's github username?",
-        name: "github",
+        name: "random",
     },
 
     {
@@ -141,7 +141,6 @@ const promptEngineer = [
 
 //create a function that kicks off process
 //create a function that writesFile into an html file
-
 //function to write file into html
 
 function init() {
@@ -150,12 +149,18 @@ function init() {
         roster.push(response)
         console.log(roster);
         if(response.continue === "I'm All Done") {
-            console.log(response);
+            writeToFile(roster);
         } else {
             choices(response.continue)
         }
     })
     
+}
+
+function writeToFile() {
+    fs.writeFile("roster.html", generateHTML.generateHTMLPage(roster), (err) => {
+        err ? console.error(err) : console.log("Successfully Made!");
+    })
 }
 
 init()

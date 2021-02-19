@@ -2,25 +2,27 @@
 const index = require("./index")
 
 //write a function that can plug the info from the roster array into the require html stuff.
+
 const generateCards = (roster) => {
-    roster.forEach(employee => {
+    let index = 0
+    while (index < roster.length) {
         return `
-        <div class="card text-dark bg-light mb-3 employee" style="max-width: 18rem;">
-        <div class="card-header"><h1>Name</h1></div>
-        <div class="card-body">
-          <h5 class="card-title">Role</h5>
-        </div>
-        <ul>
-            <li>email</li>
-            <li>id</li>
-            <li>random</li>
-        </ul>
-        </div>`
-    });
+    <div class="card text-dark bg-light mb-3 employee" style="max-width: 18rem;">
+    <div class="card-header"><h1>${roster.name}</h1></div>
+    <div class="card-body">
+      <h5 class="card-title">Role</h5>
+    </div>
+    <ul>
+        <li>${roster.email}</li>
+        <li>${roster.id}</li>
+        <li>${roster.random}</li>
+    </ul>
+    </div>`
+    }
 }
 
 
-const generateHTMLPage = () => {
+const generateHTMLPage = (roster) => {
     return `<!DOCTYPE html>
     <html lang="en">
     <head>
@@ -36,18 +38,29 @@ const generateHTMLPage = () => {
             <h1>Employee Roster</h1>
         </header>
         <div class="container">
-            <div class="card text-dark bg-light mb-3 employee" style="max-width: 18rem;">
-                <div class="card-header"><h1>Name</h1></div>
-                <div class="card-body">
-                  <h5 class="card-title">Role</h5>
-                </div>
-                <ul>
-                    <li>email</li>
-                    <li>id</li>
-                    <li>random</li>
-                </ul>
-            </div>
+            ${generateCards(roster)}
         </div>
     </body>
     </html>`
 }
+
+module.exports = {
+    generateHTMLPage,
+    generateCards
+};
+
+
+// roster.forEach(roster => {
+//     return `
+//     <div class="card text-dark bg-light mb-3 employee" style="max-width: 18rem;">
+//     <div class="card-header"><h1>${this.name}</h1></div>
+//     <div class="card-body">
+//       <h5 class="card-title">Role</h5>
+//     </div>
+//     <ul>
+//         <li>${this.email}</li>
+//         <li>${this.id}</li>
+//         <li>${this.random}</li>
+//     </ul>
+//     </div>`
+// });
