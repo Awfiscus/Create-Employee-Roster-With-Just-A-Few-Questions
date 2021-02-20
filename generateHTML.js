@@ -10,12 +10,12 @@ const generateCards = (roster) => {
     <div class="card text-dark bg-light mb-3 employee" style="max-width: 18rem;">
     <div class="card-header"><h1>${roster[index].name}</h1></div>
     <div class="card-body">
-      <h5 class="card-title">Role</h5>
+      <h5 class="card-title">${roster[index].role}</h5>
     </div>
     <ul>
         <li><a href="mailto:${roster[index].email}">${roster[index].email}</a></li>
         <li>Id Number:${roster[index].id}</li>
-        <li>${roster[index].random}</li>
+        <li>Officenuber/School/Github: ${roster[index].random}</li>
     </ul>
     </div>`;
     htmlArray.push(htmlRoster);

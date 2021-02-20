@@ -39,6 +39,12 @@ const choices = (input) => {
 
 const promptManager = [
   {
+    type: "Input",
+    message: "What role will this manager fill?",
+    name: "role",
+  },
+
+  {
     type: "input",
     message: "What is the Manager's name?",
     name: "name",
@@ -74,6 +80,12 @@ const promptManager = [
 
 const promptIntern = [
   {
+    type: "Input",
+    message: "What role will this intern fill?",
+    name: "role",
+  },
+
+  {
     type: "input",
     message: "What is the Intern's name?",
     name: "name",
@@ -106,6 +118,12 @@ const promptIntern = [
 ];
 const promptEngineer = [
   {
+    type: "Input",
+    message: "What role will this engineer fill?",
+    name: "role",
+  },
+
+  {
     type: "input",
     message: "What is the Engineer's name?",
     name: "name",
@@ -124,7 +142,7 @@ const promptEngineer = [
   },
 
   {
-    type: "number",
+    type: "input",
     message: "What is the Engineer's github username?",
     name: "random",
   },
