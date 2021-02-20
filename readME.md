@@ -1,10 +1,14 @@
 # Create An Employee Roster With a Few Questions
 
+![Screenshot-of-app](Screenshot-of-app.png)
+
 MIT License
 
 ## Description
 
 By answering a few questions using inquirer, you can generate an roster.html with your input. You can add as many employees you like based on three categories of manager, intern, and engineer. They will all be dynamically placed into the html with the info that you have input.
+
+[Here is a video demo of the the app!](https://drive.google.com/file/d/1uBq5CCNiHdtXZjQtsnyFw_IGWTLikvWr/view?usp=sharing)
 
 ## Table of Contents
 
@@ -36,7 +40,7 @@ Please contact me for the guidelines on contributions.
 
 ## Test instructions
 
-I am using jest to test my project.
+I am using jest to test my project. To run the tests I have set up, run the command npm test.
 
 ## Questions
 
